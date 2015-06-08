@@ -11,6 +11,7 @@ path.BUILD_DIR = './client/build/js';
 path.DIST_DIR = './client/dist/js';
 
 path.VENDOR_SRC = [
+  './bower_components/moment/moment.js',
   './bower_components/underscore/underscore.js',
   './bower_components/jquery/dist/jquery.js',
   './bower_components/backbone/backbone.js'
