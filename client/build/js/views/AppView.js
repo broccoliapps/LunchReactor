@@ -3,9 +3,8 @@ var AppView = Backbone.View.extend({
   el: '#app',
 
   initialize: function() {
-    this.render();
     this.title = new TitleView();
-
+    this.render();
   },
 
   render: function() {

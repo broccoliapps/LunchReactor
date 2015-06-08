@@ -1,4 +1,4 @@
-var TitleView = new Backbone.View.extend({
+var TitleView = Backbone.View.extend({
 
   id: 'title',
 
