@@ -12,7 +12,7 @@ var TitleView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template({
-      date: 'Sunday, June 7th, 2015'
+      date: moment().format('dddd, MMMM Do YYYY')
     }));
   }
 });
