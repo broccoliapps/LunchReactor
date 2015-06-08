@@ -21,12 +21,12 @@ path.VENDOR_MIN = 'vendor.min.js';
 path.APP_SRC = [
   './client/build/js/collections/*',
   './client/build/js/models/*',
+  './client/build/js/views/BackgroundView.js',
   './client/build/js/views/TitleView.js',
   './client/build/js/views/AppView.js',
   './client/build/js/app.js'
 ];
 path.APP_MIN = 'app.min.js';
-
 
 /* Dev Task
  * Watches the build directory for saved changes,
@@ -35,7 +35,6 @@ path.APP_MIN = 'app.min.js';
 gulp.task('dev', function() {
   gulp.watch(path.BUILD_DIR + '/*/*', ['build']);
 });
-
 
 /* Build Task
  * Fetches, uglifies, and concatenates bower and app components.
