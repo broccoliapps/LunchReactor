@@ -1,14 +1,16 @@
 var gulp = require('gulp'),
   bower = require('gulp-bower'),
   uglify = require('gulp-uglify'),
-  concat = require('gulp-concat');
+  concat = require('gulp-concat'),
+  minifyCSS = require('gulp-minify-css');
 
 var path = {};
 
 // Client
 path.BOWER_COMPONENTS_DIR = './bower_components';
 path.BUILD_DIR = './client/build/js';
-path.DIST_DIR = './client/dist/js';
+path.DIST_JS_DIR = './client/dist/js';
+path.DIST_CSS_DIR = './client/dist/css';
 
 path.VENDOR_SRC = [
   './bower_components/moment/moment.js',
@@ -28,6 +30,11 @@ path.APP_SRC = [
 ];
 path.APP_MIN = 'app.min.js';
 
+path.CSS_SRC = [
+  './client/build/css/style.css'
+];
+path.CSS_MIN = 'style.min.css';
+
 /* Dev Task
  * Watches the build directory for saved changes,
  * then automatically reruns the build task.
@@ -39,7 +46,7 @@ gulp.task('dev', function() {
 /* Build Task
  * Fetches, uglifies, and concatenates bower and app components.
  */
-gulp.task('build', ['bower', 'vendor', 'app']);
+gulp.task('build', ['bower', 'vendor', 'app', 'css']);
 gulp.task('bower', function() {
   bower().pipe(gulp.dest(path.BOWER_COMPONENTS_DIR));
 });
@@ -47,11 +54,17 @@ gulp.task('vendor', function() {
   gulp.src(path.VENDOR_SRC)
     .pipe(uglify())
     .pipe(concat(path.VENDOR_MIN))
-    .pipe(gulp.dest(path.DIST_DIR));
+    .pipe(gulp.dest(path.DIST_JS_DIR));
 });
 gulp.task('app', function() {
   gulp.src(path.APP_SRC)
     .pipe(uglify())
     .pipe(concat(path.APP_MIN))
-    .pipe(gulp.dest(path.DIST_DIR));
+    .pipe(gulp.dest(path.DIST_JS_DIR));
+});
+gulp.task('css', function() {
+  gulp.src(path.CSS_SRC)
+    .pipe(minifyCSS())
+    .pipe(concat(path.CSS_MIN))
+    .pipe(gulp.dest(path.DIST_CSS_DIR));
 });
