@@ -5,8 +5,6 @@ var gulp = require('gulp'),
   minifyCSS = require('gulp-minify-css');
 
 var path = {};
-
-// Client
 path.BOWER_COMPONENTS_DIR = './bower_components';
 path.BUILD_DIR = './client/build';
 path.DIST_JS_DIR = './client/dist/js';
@@ -40,11 +38,14 @@ path.CSS_MIN = 'style.min.css';
  * then automatically reruns the build task.
  */
 gulp.task('dev', function() {
-  gulp.watch([path.BUILD_DIR + '/*/*', path.BUILD_DIR + '/*/*/*'], ['build']);
+  gulp.watch([
+    path.BUILD_DIR + '/*/*',
+    path.BUILD_DIR + '/*/*/*'
+  ], ['build']);
 });
 
 /* Build Task
- * Fetches, uglifies, and concatenates bower and app components.
+ * Fetches, uglifies, and concatenates bower, app, and css components.
  */
 gulp.task('build', ['bower', 'vendor', 'app', 'css']);
 gulp.task('bower', function() {
