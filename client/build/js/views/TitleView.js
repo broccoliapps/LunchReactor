@@ -4,7 +4,8 @@ var TitleView = Backbone.View.extend({
 
   template: _.template(
     '<h1>Lunch Reactor</h1>' +
-    '<h2><%= date %></h2>'),
+    '<h2><%= date %></h2>'
+  ),
 
   initialize: function() {
     this.render();
