@@ -9,29 +9,29 @@ path.BOWER_COMPONENTS_DIR = './bower_components';
 path.BUILD_DIR = './client/build';
 path.DIST_JS_DIR = './client/dist/js';
 path.DIST_CSS_DIR = './client/dist/css';
-
+path.VENDOR_MIN = 'vendor.min.js';
 path.VENDOR_SRC = [
   './bower_components/moment/moment.js',
   './bower_components/underscore/underscore.js',
   './bower_components/jquery/dist/jquery.js',
   './bower_components/backbone/backbone.js'
 ];
-path.VENDOR_MIN = 'vendor.min.js';
-
+path.APP_MIN = 'app.min.js';
 path.APP_SRC = [
   './client/build/js/collections/*',
   './client/build/js/models/*',
   './client/build/js/views/BackgroundView.js',
   './client/build/js/views/TitleView.js',
+  './client/build/js/views/DashboardView.js',
+  './client/build/js/views/RsvpView.js',
+  './client/build/js/views/CounterView.js',
   './client/build/js/views/AppView.js',
   './client/build/js/app.js'
 ];
-path.APP_MIN = 'app.min.js';
-
+path.CSS_MIN = 'style.min.css';
 path.CSS_SRC = [
   './client/build/css/style.css'
 ];
-path.CSS_MIN = 'style.min.css';
 
 /* Dev Task
  * Watches the build directory for saved changes,
