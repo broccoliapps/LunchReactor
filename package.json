@@ -14,7 +14,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postInstall": "bower install"
+    "postInstall": "gulp build"
   },
   "repository": {
     "type": "git",
