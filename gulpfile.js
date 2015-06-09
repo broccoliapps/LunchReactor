@@ -2,6 +2,7 @@ var gulp = require('gulp'),
   bower = require('gulp-bower'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
+  foreman = require('gulp-foreman'),
   minifyCSS = require('gulp-minify-css');
 
 var path = {};
@@ -37,10 +38,16 @@ path.CSS_SRC = [
  * Watches the build directory for saved changes,
  * then automatically reruns the build task.
  */
-gulp.task('dev', function() {
+gulp.task('dev', ['build', 'foreman', 'dev-watch']);
+gulp.task('foreman', function() {
+  foreman({
+    procfile: 'Procfile.dev',
+    env: '.env'
+  });
+});
+gulp.task('dev-watch', function() {
   gulp.watch([
-    path.BUILD_DIR + '/*/*',
-    path.BUILD_DIR + '/*/*/*'
+    path.BUILD_DIR + '/**/**/*'
   ], ['build']);
 });
 
