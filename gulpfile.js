@@ -10,15 +10,19 @@ path.BOWER_COMPONENTS_DIR = './bower_components';
 path.BUILD_DIR = './client/build';
 path.DIST_JS_DIR = './client/dist/js';
 path.DIST_CSS_DIR = './client/dist/css';
-path.VENDOR_MIN = 'vendor.min.js';
-path.VENDOR_SRC = [
+path.VENDOR_JS_MIN = 'vendor.min.js';
+path.VENDOR_JS_SRC = [
   './bower_components/moment/moment.js',
   './bower_components/underscore/underscore.js',
   './bower_components/jquery/dist/jquery.js',
   './bower_components/backbone/backbone.js'
 ];
-path.APP_MIN = 'app.min.js';
-path.APP_SRC = [
+path.VENDOR_CSS_MIN = 'vendor.min.css';
+path.VENDOR_CSS_SRC = [
+  './bower_components/normalize.css/normalize.css'
+];
+path.APP_JS_MIN = 'app.min.js';
+path.APP_JS_SRC = [
   './client/build/js/collections/*',
   './client/build/js/models/*',
   './client/build/js/views/BackgroundView.js',
@@ -29,8 +33,8 @@ path.APP_SRC = [
   './client/build/js/views/AppView.js',
   './client/build/js/app.js'
 ];
-path.CSS_MIN = 'style.min.css';
-path.CSS_SRC = [
+path.APP_CSS_MIN = 'style.min.css';
+path.APP_CSS_SRC = [
   './client/build/css/style.css'
 ];
 
@@ -54,25 +58,27 @@ gulp.task('dev-watch', function() {
 /* Build Task
  * Fetches, uglifies, and concatenates bower, app, and css components.
  */
-gulp.task('build', ['bower', 'vendor', 'app', 'css']);
+gulp.task('build', ['bower', 'vendor', 'app']);
 gulp.task('bower', function() {
   bower().pipe(gulp.dest(path.BOWER_COMPONENTS_DIR));
 });
 gulp.task('vendor', function() {
-  gulp.src(path.VENDOR_SRC)
+  gulp.src(path.VENDOR_JS_SRC)
     .pipe(uglify())
-    .pipe(concat(path.VENDOR_MIN))
+    .pipe(concat(path.VENDOR_JS_MIN))
     .pipe(gulp.dest(path.DIST_JS_DIR));
+  gulp.src(path.VENDOR_CSS_SRC)
+    .pipe(minifyCSS())
+    .pipe(concat(path.VENDOR_CSS_MIN))
+    .pipe(gulp.dest(path.DIST_CSS_DIR));
 });
 gulp.task('app', function() {
-  gulp.src(path.APP_SRC)
+  gulp.src(path.APP_JS_SRC)
     .pipe(uglify())
-    .pipe(concat(path.APP_MIN))
+    .pipe(concat(path.APP_JS_MIN))
     .pipe(gulp.dest(path.DIST_JS_DIR));
-});
-gulp.task('css', function() {
-  gulp.src(path.CSS_SRC)
+  gulp.src(path.APP_CSS_SRC)
     .pipe(minifyCSS())
-    .pipe(concat(path.CSS_MIN))
+    .pipe(concat(path.APP_CSS_MIN))
     .pipe(gulp.dest(path.DIST_CSS_DIR));
 });
