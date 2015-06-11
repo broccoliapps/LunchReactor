@@ -5,7 +5,7 @@ var path = require('path'); // https://nodejs.org/api/path.html#path_path
 var express = require('express');
 
 // Set environment variables
-var port = process.env.port || 3000;
+var port = process.env.PORT || 3000;
 
 // Creates the instance of express that will become the server
 var app = express();
