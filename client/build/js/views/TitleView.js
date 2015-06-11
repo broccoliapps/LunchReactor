@@ -3,7 +3,7 @@ var TitleView = Backbone.View.extend({
   id: 'title',
 
   template: _.template(
-    '<h1>Lunch Reactor</h1>' +
+    '<h1>The Lunch Website</h1>' +
     '<h2><%= date %></h2>'
   ),
 
