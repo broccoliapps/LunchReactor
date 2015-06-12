@@ -3,6 +3,7 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
   foreman = require('gulp-foreman'),
+  plumber = require('gulp-plumber'),
   minifyCSS = require('gulp-minify-css');
 
 var path = {};
@@ -64,20 +65,24 @@ gulp.task('bower', function() {
 });
 gulp.task('vendor', function() {
   gulp.src(path.VENDOR_JS_SRC)
+    .pipe(plumber())
     .pipe(uglify())
     .pipe(concat(path.VENDOR_JS_MIN))
     .pipe(gulp.dest(path.DIST_JS_DIR));
   gulp.src(path.VENDOR_CSS_SRC)
+    .pipe(plumber())
     .pipe(minifyCSS())
     .pipe(concat(path.VENDOR_CSS_MIN))
     .pipe(gulp.dest(path.DIST_CSS_DIR));
 });
 gulp.task('app', function() {
   gulp.src(path.APP_JS_SRC)
+    .pipe(plumber())
     .pipe(uglify())
     .pipe(concat(path.APP_JS_MIN))
     .pipe(gulp.dest(path.DIST_JS_DIR));
   gulp.src(path.APP_CSS_SRC)
+    .pipe(plumber())
     .pipe(minifyCSS())
     .pipe(concat(path.APP_CSS_MIN))
     .pipe(gulp.dest(path.DIST_CSS_DIR));
