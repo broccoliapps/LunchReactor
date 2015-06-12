@@ -18,7 +18,7 @@ var BackgroundView = Backbone.View.extend({
   },
 
   randomBackground: function() {
-    return './assets/' + Math.floor((Math.random() * 4) + 1) + '.mp4';
+    return './assets/' + Math.floor((Math.random() * 3) + 1) + '.mp4';
   }
 
 });
