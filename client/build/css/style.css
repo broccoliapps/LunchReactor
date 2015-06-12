@@ -16,11 +16,11 @@ h1 {
 
 #dashboard {
   position: fixed;
-  top: 55%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 200px;
-  width: 400px;
+  width: 500px;
 }
 
 h2 {
@@ -37,6 +37,92 @@ h3 {
   font-size: 18pt;
   color: #212121;
 }
+
+/* Shapes */
+
+.circle {
+  border-radius: 50%;
+  behavior: url(PIE.htc); /* IE8 */
+  width: 200px; height: 200px;
+  border: 1px solid #fff;
+  z-index: 2;
+}
+
+#frost{
+  display:none;
+  opacity:0.4;
+  background:#fff;
+  overflow:hidden;
+  position: absolute;
+}
+
+#rsvp{
+  position: relative;
+  cursor:pointer;
+  float: left;
+}
+
+#rsvp:hover{
+  opacity:0.4;
+  background:#fff;
+  overflow:hidden;
+  position: absolute;
+}
+
+#rsvp-text{
+  display:none;
+}
+
+#counter{
+  position: relative;
+  float:right;
+}
+
+hr {
+  height:1px;
+  border:0;
+  width:260px;
+  background:#212121;
+}
+
+.circle p{
+  font-family: 'Lato', Geneva, sans-serif;
+  font-size:18pt;
+  color:#fff;
+  position:relative;
+  text-align:center;
+  margin: 0;
+  z-index:3;
+  height: auto; width: 200px;
+  transform: translate(-50%, -50%);
+  top:50%;
+  left: 50%;
+}
+.circle a {
+  text-decoration:none;
+  color:#fff;
+}
+
+.circle p span.rsvp {
+  font-size:42pt;
+  font-family:'Roboto Slab', Geneva, sans-serif;
+}
+
+#rsvp-success{
+  display:none;
+  color: #66BB6A;
+  font-size:96pt;
+}
+
+.circle p span.count {
+  font-family:'Roboto Slab', Geneva, sans-serif;
+  font-size:72pt;
+}
+
+.circle p span.subtitle {
+ text-align:center;
+}
+
 /* Background */
 
 #background {
