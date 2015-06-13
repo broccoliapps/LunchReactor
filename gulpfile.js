@@ -28,15 +28,20 @@ path.APP_JS_SRC = [
   './client/build/js/models/*',
   './client/build/js/views/BackgroundView.js',
   './client/build/js/views/TitleView.js',
-  './client/build/js/views/DashboardView.js',
   './client/build/js/views/RsvpView.js',
   './client/build/js/views/CounterView.js',
+  './client/build/js/views/DashboardView.js',
+  './client/build/js/views/MessageView.js',
   './client/build/js/views/AppView.js',
   './client/build/js/app.js'
 ];
 path.APP_CSS_MIN = 'style.min.css';
 path.APP_CSS_SRC = [
-  './client/build/css/style.css'
+  './client/build/css/shapes.css',
+  './client/build/css/background.css',
+  './client/build/css/title.css',
+  './client/build/css/dashboard.css',
+  './client/build/css/message.css'
 ];
 
 /* Dev Task
@@ -83,7 +88,7 @@ gulp.task('app', function() {
     .pipe(gulp.dest(path.DIST_JS_DIR));
   gulp.src(path.APP_CSS_SRC)
     .pipe(plumber())
-    .pipe(minifyCSS())
     .pipe(concat(path.APP_CSS_MIN))
+    .pipe(minifyCSS())
     .pipe(gulp.dest(path.DIST_CSS_DIR));
 });
