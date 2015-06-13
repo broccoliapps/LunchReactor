@@ -1,0 +1,38 @@
+/* DashboardView */
+
+#dashboard {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  height: 200px;
+  width: 500px;
+}
+
+#rsvp {
+  position: relative;
+  cursor: pointer;
+  float: left;
+}
+
+#rsvp:hover {
+  opacity: 0.4;
+  background: #fff;
+  overflow: hidden;
+  position: absolute;
+}
+
+#rsvp-text {
+  display: none;
+}
+
+#rsvp-success {
+  display: none;
+  color: #66BB6A;
+  font-size: 96pt;
+}
+
+#counter {
+  position: relative;
+  float: right;
+}

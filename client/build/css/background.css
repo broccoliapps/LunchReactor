@@ -1,0 +1,29 @@
+/* Background */
+
+#background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  background-color: #000;
+}
+
+video#bgvid {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-position: 50 0;
+  opacity: .5;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  background: #000;
+  background-size: cover;
+}

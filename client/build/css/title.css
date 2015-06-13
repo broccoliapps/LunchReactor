@@ -1,0 +1,26 @@
+/* TitleView */
+
+#title {
+  position: fixed;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#title h1 {
+  font-family: 'Roboto Slab', Geneva, sans-serif;
+  font-size: 48pt;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+#title h2 {
+  font-family: 'Lato', Geneva, sans-serif;
+  font-size: 24pt;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: center;
+}
