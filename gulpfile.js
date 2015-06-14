@@ -1,8 +1,7 @@
 var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
-  plumber = require('gulp-plumber'),
-  minifyCSS = require('gulp-minify-css');
+  plumber = require('gulp-plumber');
 
 var path = {};
 path.BUILD_DIR = './client/build';
@@ -66,7 +65,6 @@ gulp.task('vendor', function() {
     .pipe(gulp.dest(path.DIST_JS_DIR));
   gulp.src(path.VENDOR_CSS_SRC)
     .pipe(plumber())
-    .pipe(minifyCSS())
     .pipe(concat(path.VENDOR_CSS_MIN))
     .pipe(gulp.dest(path.DIST_CSS_DIR));
 });
@@ -79,6 +77,5 @@ gulp.task('app', function() {
   gulp.src(path.APP_CSS_SRC)
     .pipe(plumber())
     .pipe(concat(path.APP_CSS_MIN))
-    .pipe(minifyCSS())
     .pipe(gulp.dest(path.DIST_CSS_DIR));
 });
