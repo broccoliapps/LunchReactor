@@ -1,13 +1,10 @@
 var gulp = require('gulp'),
-  bower = require('gulp-bower'),
   uglify = require('gulp-uglify'),
   concat = require('gulp-concat'),
-  foreman = require('gulp-foreman'),
   plumber = require('gulp-plumber'),
   minifyCSS = require('gulp-minify-css');
 
 var path = {};
-path.BOWER_COMPONENTS_DIR = './bower_components';
 path.BUILD_DIR = './client/build';
 path.DIST_JS_DIR = './client/dist/js';
 path.DIST_CSS_DIR = './client/dist/css';
@@ -46,7 +43,7 @@ path.APP_CSS_SRC = [
 ];
 
 /* Dev Task
- * Watches the build directory for saved changes,
+ * Watches the build directory and gulpfile for saved changes,
  * then automatically reruns the build task.
  */
 gulp.task('dev', ['build', 'dev-watch']);
@@ -58,10 +55,9 @@ gulp.task('dev-watch', function() {
 });
 
 /* Build Task
- * Fetches, uglifies, and concatenates bower, app, and css components.
+ * Uglifies and concatenates vendor, app, and css components.
  */
 gulp.task('build', ['vendor', 'app']);
-
 gulp.task('vendor', function() {
   gulp.src(path.VENDOR_JS_SRC)
     .pipe(plumber())
