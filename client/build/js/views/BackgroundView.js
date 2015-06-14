@@ -1,9 +1,10 @@
 var BackgroundView = Backbone.View.extend({
+
   el: '#background',
 
   template: _.template(
-    '<video id="bgvid" autoplay loop style="display: inline;">' +
-    '<source id="source" src="<%= filename %>" type="video/mp4">' +
+    '<video id="bgvid" autoplay loop>' +
+    '<source src="<%= filename %>" type="video/mp4">' +
     '</video>'
   ),
 
@@ -13,8 +14,10 @@ var BackgroundView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template({
-      filename: this.randomBackground()
-    }));
+        filename: this.randomBackground()
+      }))
+      .hide()
+      .fadeIn();
   },
 
   randomBackground: function() {

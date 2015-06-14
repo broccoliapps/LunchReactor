@@ -11,10 +11,12 @@ var AppView = Backbone.View.extend({
 
   render: function() {
     this.$el.append([
-      this.title.$el,
-      this.dashboard.$el,
-      this.message.$el
-    ]);
+        this.title.$el,
+        this.dashboard.$el,
+        this.message.$el
+      ])
+      .hide()
+      .fadeIn();
   }
 
 });

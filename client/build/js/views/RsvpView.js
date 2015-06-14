@@ -15,10 +15,15 @@ var RsvpView = Backbone.View.extend({
   success: '<div id="success" class="circle"><p>✓</p></div>',
 
   initialize: function() {
+    this.listenTo(this.model, 'change', this.render);
+    this.render();
+  },
+
+  render: function() {
 
     var hasRSVPed = this.model.get('hasRSVPed');
 
-    // Has user RSVPed before?
+    // Has user RSVPed already?
     var html = hasRSVPed ? this.success : this.template({
       timeLeft: this.model.get('timeLeft')
     });
@@ -28,11 +33,7 @@ var RsvpView = Backbone.View.extend({
       html += this.frost;
     }
 
-    this.render(html);
-  },
-
-  render: function(html) {
-    this.$el.html(html);
+    this.$el.html(html).hide().fadeIn();
   },
 
   toggleFrost: function() {
@@ -40,7 +41,7 @@ var RsvpView = Backbone.View.extend({
   },
 
   doRSVP: function() {
-
+    this.model.doRSVP();
     // TODO
     // Validate time, check if past expiration
     // Perform RSVP
