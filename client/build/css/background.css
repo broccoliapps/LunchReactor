@@ -1,4 +1,4 @@
-/* BackgroundView */
+/* Background View */
 
 #background {
   position: fixed;
@@ -13,7 +13,7 @@
 }
 
 video#bgvid {
-  display: none;
+  display: inline;
   position: fixed;
   right: 0;
   bottom: 0;
