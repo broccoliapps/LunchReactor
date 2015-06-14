@@ -37,6 +37,7 @@ path.APP_JS_SRC = [
 ];
 path.APP_CSS_MIN = 'style.min.css';
 path.APP_CSS_SRC = [
+  './client/build/css/style.css',
   './client/build/css/shapes.css',
   './client/build/css/background.css',
   './client/build/css/title.css',
@@ -48,15 +49,10 @@ path.APP_CSS_SRC = [
  * Watches the build directory for saved changes,
  * then automatically reruns the build task.
  */
-gulp.task('dev', ['build', 'foreman', 'dev-watch']);
-gulp.task('foreman', function() {
-  foreman({
-    procfile: 'Procfile.dev',
-    env: '.env'
-  });
-});
+gulp.task('dev', ['build', 'dev-watch']);
 gulp.task('dev-watch', function() {
   gulp.watch([
+    './gulpfile.js',
     path.BUILD_DIR + '/**/**/*'
   ], ['build']);
 });
@@ -64,10 +60,8 @@ gulp.task('dev-watch', function() {
 /* Build Task
  * Fetches, uglifies, and concatenates bower, app, and css components.
  */
-gulp.task('build', ['bower', 'vendor', 'app']);
-gulp.task('bower', function() {
-  bower().pipe(gulp.dest(path.BOWER_COMPONENTS_DIR));
-});
+gulp.task('build', ['vendor', 'app']);
+
 gulp.task('vendor', function() {
   gulp.src(path.VENDOR_JS_SRC)
     .pipe(plumber())
