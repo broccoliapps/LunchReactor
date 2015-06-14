@@ -6,5 +6,9 @@ var RSVP = Backbone.Model.extend({
     hasRSVPed: false
   },
 
-  initialize: function() {}
+  initialize: function() {},
+
+  doRSVP: function() {
+    this.set('hasRSVPed', true);
+  }
 });

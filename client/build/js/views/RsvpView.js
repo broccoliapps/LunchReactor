@@ -24,9 +24,7 @@ var RsvpView = Backbone.View.extend({
     var hasRSVPed = this.model.get('hasRSVPed');
 
     // Has user RSVPed already?
-    var html = hasRSVPed ? this.success : this.template({
-      timeLeft: this.model.get('timeLeft')
-    });
+    var html = hasRSVPed ? this.success : this.template(this.model.attributes);
 
     // Is it past expiration?
     if (!hasRSVPed && !this.model.get('isExpired')) {
