@@ -12,6 +12,8 @@
 #rsvp {
   position: relative;
   float: left;
+  font-family: 'Roboto Slab', Geneva, sans-serif;
+  font-weight:normal;
 }
 
 #frost {
@@ -28,6 +30,12 @@
   border: 1px solid #66BB6A;
 }
 
+#rsvp.count: {
+  display: inline;
+  font-size: 72pt;
+  color: #FFF;
+}
+
 #success p {
   font-size: 96pt;
   color: #66BB6A;
@@ -38,17 +46,17 @@
   float: right;
 }
 
-span.rsvp {
-  font-size: 42pt;
-  font-family: 'Roboto Slab', Geneva, sans-serif;
-  display: block;
-}
-
 span.count {
-  font-family: 'Roboto Slab', Geneva, sans-serif;
   font-size: 72pt;
 }
 
-span.subtitle {
+span.rsvp {
+  font-family: 'Roboto Slab', Geneva, sans-serif;
+  font-size: 42pt;
+  display: block;
+}
+
+span.expiration {
+  font-family: 'Lato', Geneva, sans-serif;
   text-align: center;
 }

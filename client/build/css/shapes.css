@@ -10,7 +10,6 @@
 }
 
 .circle p {
-  font-family: 'Lato', Geneva, sans-serif;
   font-size: 18pt;
   color: #fff;
   position: relative;
@@ -18,13 +17,9 @@
   margin: 0;
   z-index: 3;
   height: auto;
+  font-family: 'Roboto Slab', Geneva, sans-serif;
   width: 200px;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-}
-
-.circle a {
-  text-decoration: none;
-  color: #fff;
 }
