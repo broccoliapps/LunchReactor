@@ -23,6 +23,8 @@ var RSVP = Backbone.Model.extend({
   },
 
   doRSVP: function() {
-    this.set('hasRSVPed', true);
+    if (!this.get('isExpired')) {
+      this.set('hasRSVPed', true);
+    }
   }
 });
