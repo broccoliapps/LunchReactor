@@ -28,17 +28,3 @@
   text-decoration: none;
   color: #fff;
 }
-
-.circle p span.rsvp {
-  font-size: 42pt;
-  font-family: 'Roboto Slab', Geneva, sans-serif;
-}
-
-.circle p span.count {
-  font-family: 'Roboto Slab', Geneva, sans-serif;
-  font-size: 72pt;
-}
-
-.circle p span.subtitle {
-  text-align: center;
-}

@@ -1,38 +1,54 @@
-/* DashboardView */
+/* Dashboard View */
 
 #dashboard {
   position: fixed;
-  top: 60%;
+  top: 55%;
   left: 50%;
-  transform: translate(-50%, -70%);
+  transform: translate(-50%, -55%);
   height: 200px;
   width: 500px;
 }
 
 #rsvp {
   position: relative;
-  cursor: pointer;
   float: left;
 }
 
-#rsvp:hover {
+#frost {
   opacity: 0.4;
+  cursor: pointer;
   background: #fff;
   overflow: hidden;
   position: absolute;
 }
 
-#rsvp-text {
-  display: none;
+#success {
+  position: relative;
+  float: left;
+  border: 1px solid #66BB6A;
 }
 
-#rsvp-success {
-  display: none;
-  color: #66BB6A;
+#success p {
   font-size: 96pt;
+  color: #66BB6A;
 }
 
 #counter {
   position: relative;
   float: right;
+}
+
+span.rsvp {
+  font-size: 42pt;
+  font-family: 'Roboto Slab', Geneva, sans-serif;
+  display: block;
+}
+
+span.count {
+  font-family: 'Roboto Slab', Geneva, sans-serif;
+  font-size: 72pt;
+}
+
+span.subtitle {
+  text-align: center;
 }
