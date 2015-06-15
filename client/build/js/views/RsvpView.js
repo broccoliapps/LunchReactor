@@ -1,5 +1,7 @@
 var RsvpView = Backbone.View.extend({
 
+  id: 'rsvp',
+
   events: {
     'click': 'doRSVP',
     'mouseenter': 'toggleFrost',
@@ -7,7 +9,7 @@ var RsvpView = Backbone.View.extend({
   },
 
   template: _.template(
-    '<div id="rsvp" class="circle">' +
+    '<div id="button" class="circle">' +
     '<p><span class="rsvp">RSVP</span>' +
     '<span class="expiration"><%- this.model.getTimeLeft() %></span></p></div>'
   ),

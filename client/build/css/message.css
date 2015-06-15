@@ -1,15 +1,22 @@
 /* Message View */
 
 #message {
-  font-family: 'Lato', Geneva, sans-serif;
+  margin-top: 36px;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+#message p {
   color: #fff;
+  font-family: 'Lato', Geneva, sans-serif;
   font-size: 18pt;
-  position: fixed;
-  top: 100%;
-  left: 50%;
-  transform: translate(-50%, 90%);
-  height: 50px;
-  width: 500px;
   font-weight: 100;
   text-align: center;
 }
