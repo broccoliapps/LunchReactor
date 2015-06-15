@@ -12,7 +12,8 @@ var app = express();
 
 // Configure express.static middleware to serve static assets
 // http://expressjs.com/starter/static-files.html
-app.use(express.static(path.join(__dirname, '../client')));
+app.use('/', express.static(path.join(__dirname, '../client')));
+app.use('/bower_components', express.static(path.join(__dirname, '../bower_components')));
 
 // Start the server
 var server = app.listen(port, function() {
