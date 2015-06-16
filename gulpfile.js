@@ -27,6 +27,7 @@ path.APP_JS_SRC = [
   './client/build/js/views/RsvpView.js',
   './client/build/js/views/CounterView.js',
   './client/build/js/views/DashboardView.js',
+  './client/build/js/views/AuthDialogView.js',
   './client/build/js/views/MessageView.js',
   './client/build/js/views/AppView.js',
   './client/build/js/app.js'
