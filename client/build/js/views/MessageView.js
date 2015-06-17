@@ -25,5 +25,6 @@ var MessageView = Backbone.View.extend({
 
   showAuthDialog: function() {
     console.log('showAuthDialog');
+    this.auth.$el.toggle();
   }
 });

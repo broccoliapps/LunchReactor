@@ -1,11 +1,6 @@
 var AuthDialogView = Backbone.View.extend({
 
-  tagName: 'paper-dialog',
-
-  attributes: {
-    heading: 'Dialog Title',
-    opened: 'true'
-  },
+  el: '#asdf',
 
   template: _.template('<p>Some content.</p>'),
 
