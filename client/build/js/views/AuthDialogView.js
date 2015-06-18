@@ -1,6 +1,6 @@
 var AuthDialogView = Backbone.View.extend({
 
-  el: '#asdf',
+  id: 'auth',
 
   template: _.template('<p>Some content.</p>'),
 
