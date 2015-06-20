@@ -14,8 +14,8 @@ var MessageView = Backbone.View.extend({
     '</p>'),
 
 
-  initialize: function() {
-    this.auth = new AuthDialogView();
+  initialize: function(options) {
+    this.auth = options.auth;
     this.render();
   },
 
@@ -24,6 +24,6 @@ var MessageView = Backbone.View.extend({
   },
 
   showAuthDialog: function() {
-    var dialog = document.getElementById(this.auth.id).open();
+    this.auth.show();
   }
 });
