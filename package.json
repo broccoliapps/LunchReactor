@@ -3,20 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
-  "scripts": {
-    "postinstall": "./node_modules/bower/bin/bower install"
-  },
+  "scripts": {},
   "dependencies": {
+    "bower": "^1.4.1",
     "express": "^4.12.4",
     "gulp": "^3.9.0",
-    "gulp-bower": "0.0.10",
     "gulp-concat": "^2.5.2",
     "gulp-foreman": "^0.1.2",
     "gulp-plumber": "^1.0.1",
     "gulp-uglify": "^1.2.0"
   },
   "devDependencies": {},
-  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/broccoliapps/TheLunchWebsite.git"
