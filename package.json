@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
   "dependencies": {
     "express": "^4.12.4",
     "gulp": "^3.9.0",
