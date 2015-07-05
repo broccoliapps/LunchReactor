@@ -1,0 +1,120 @@
+<dom-module id="create-account-dialog">
+
+  <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+  <link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-behavior.html">
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+  <link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+  <link rel="import" href="../bower_components/iron-form/iron-form.html">
+  <link rel="import" href="../bower_components/paper-input/paper-input.html">
+
+  <style>
+  h2 {
+    margin: 0;
+    padding: 0;
+  }
+
+  paper-dialog {
+    height: inherit;
+    width: auto;
+    border-radius: 8px;
+    padding: 1%;
+    opacity: .95;
+  }
+
+  paper-input {
+    width: 100%;
+  }
+
+  paper-button {
+    float: right;
+    margin: 10% 0 0 0;
+  }
+
+  #auth {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-align-content: space-between;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  }
+
+  #register {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+    margin-right: 50px;
+  }
+
+  #login {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+  }
+
+  p
+
+  </style>
+
+  <template>
+    <paper-dialog id="create-account-dialog" with-backdrop entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+      <div id="auth">
+        <div id="register">
+          <h2>Register</h2>
+          <form id="register" method="post" action="/form/handler">
+            <paper-input name="email" label="Email Address"></paper-input>
+            <paper-input name="password" type="password" label="Password"></paper-input>
+            <paper-input name="password" type="password" label="Verify Password"></paper-input>
+            <paper-input name="password" label="Full Name"></paper-input>
+            <paper-input name="password" label="Channel"></paper-input>
+            <paper-button raised onclick="submitForm()">Register</paper-button>
+          </form>
+        </div>
+
+        <div id="login">
+          <h2>Log in</h2>
+          <form id="login" method="post" action="/form/handler">
+            <paper-input name="email" label="Email Address"></paper-input>
+            <paper-input name="password" type="password" label="Password"></paper-input>
+            <paper-button raised onclick="submitForm()">Login</paper-button>
+          </form>
+        </div>
+        </container>
+
+    </paper-dialog>
+  </template>
+
+</dom-module>
+
+<script>
+Polymer({
+  is: 'create-account-dialog'
+});
+
+</script>
+
