@@ -22,12 +22,12 @@ path.APP_JS_MIN = 'app.min.js';
 path.APP_JS_SRC = [
   './client/build/js/collections/*',
   './client/build/js/models/*',
+  './client/build/js/dialogs/*',
   './client/build/js/views/BackgroundView.js',
   './client/build/js/views/TitleView.js',
   './client/build/js/views/RsvpView.js',
   './client/build/js/views/CounterView.js',
   './client/build/js/views/DashboardView.js',
-  './client/build/js/views/AuthDialogView.js',
   './client/build/js/views/MessageView.js',
   './client/build/js/views/AppView.js',
   './client/build/js/app.js'

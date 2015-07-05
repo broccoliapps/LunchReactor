@@ -5,9 +5,10 @@ var AppView = Backbone.View.extend({
   initialize: function() {
     this.title = new TitleView();
     this.dashboard = new DashboardView();
-    this.auth = new AuthDialogView();
+    this.createAccountDialog = new CreateAccountDialog();
     this.message = new MessageView({
-      auth: this.auth
+      createAccountDialog: this.createAccountDialog,
+      signInDialog: null
     });
     this.render();
   },
@@ -17,7 +18,7 @@ var AppView = Backbone.View.extend({
         this.title.$el,
         this.dashboard.$el,
         this.message.$el,
-        this.auth.$el
+        this.createAccountDialog.$el
       ])
       .hide()
       .fadeIn();

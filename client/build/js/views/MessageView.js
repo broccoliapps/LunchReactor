@@ -3,19 +3,19 @@ var MessageView = Backbone.View.extend({
   id: 'message',
 
   events: {
-    'click #link-auth': 'showAuthDialog',
-    'click #link-auth2': 'showAuthDialog'
+    'click #sign-in': 'showSignInDialog',
+    'click #create-account': 'showCreateAccountDialog'
   },
 
   template: _.template(
     '<p>' +
-    '<a id="link-auth">Sign in</a> ' +
-    'or <a id="link-auth2" onclick=>create an account</a> in seconds.' +
+    '<a id="sign-in">Sign in</a> ' +
+    'or <a id="create-account">create an account</a> in seconds.' +
     '</p>'),
 
 
   initialize: function(options) {
-    this.auth = options.auth;
+    this.createAccountDialog = options.createAccountDialog;
     this.render();
   },
 
@@ -23,7 +23,7 @@ var MessageView = Backbone.View.extend({
     this.$el.html(this.template());
   },
 
-  showAuthDialog: function() {
-    this.auth.show();
+  showCreateAccountDialog: function() {
+    this.createAccountDialog.show();
   }
 });
