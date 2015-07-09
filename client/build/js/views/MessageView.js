@@ -16,11 +16,16 @@ var MessageView = Backbone.View.extend({
 
   initialize: function(options) {
     this.createAccountDialog = options.createAccountDialog;
+    this.signInDialog = options.signInDialog;
     this.render();
   },
 
   render: function() {
     this.$el.html(this.template());
+  },
+
+  showSignInDialog: function() {
+    this.signInDialog.show();
   },
 
   showCreateAccountDialog: function() {
