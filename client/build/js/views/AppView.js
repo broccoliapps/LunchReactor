@@ -16,14 +16,13 @@ var AppView = Backbone.View.extend({
 
   render: function() {
     this.$el.append([
-        this.title.$el,
-        this.dashboard.$el,
-        this.message.$el,
-        this.createAccountDialog.$el,
-        this.signInDialog.$el
-      ])
-      .hide()
-      .fadeIn();
+      this.title.$el,
+      this.dashboard.$el,
+      this.message.$el,
+      this.createAccountDialog.$el,
+      this.signInDialog.$el
+    ]);
+
   }
 
 });
