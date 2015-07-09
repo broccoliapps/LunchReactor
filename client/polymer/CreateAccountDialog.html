@@ -93,6 +93,10 @@
     align-self: center;
   }
 
+  #create-account-error {
+    color:#D32F2F;
+  }
+
   </style>
 
   <template>
@@ -102,17 +106,18 @@
       <form method="post" action="/form/handler">
         <div id="inputs">
           <div class="left">
-            <paper-input name="email" label="Email Address"></paper-input>
-            <paper-input name="password" type="password" label="Password"></paper-input>
-            <paper-input name="password" type="password" label="Verify Password"></paper-input>
+            <paper-input id="create-account-email" name="email" label="Email Address"></paper-input>
+            <paper-input id="create-account-password" name="password" type="password" label="Password"></paper-input>
+            <paper-input id="create-account-verify-password" name="verify-password" type="password" label="Verify Password"></paper-input>
           </div>
 
           <div class="right">
-            <paper-input name="password" label="Full Name"></paper-input>
-            <paper-input name="password" label="Channel"></paper-input>
+            <paper-input id="create-account-full-name" name="full-name" label="Full Name"></paper-input>
+            <paper-input id="create-account-channel" name="channel" label="Channel"></paper-input>
           </div>
         </div>
-        <paper-button id="create-account-button" raised>Create Account</paper-button>
+        <paper-button id="create-account-submit" raised>Create Account</paper-button>
+        <p id="create-account-error"></p>
       </form>
 
     </paper-dialog>
