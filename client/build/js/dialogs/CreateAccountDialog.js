@@ -1,6 +1,6 @@
 var CreateAccountDialog = Backbone.View.extend({
 
-  id: 'auth',
+  id: 'create-account',
 
   template: _.template(
     '<link rel="import" href="./polymer/CreateAccountDialog.html">' +
