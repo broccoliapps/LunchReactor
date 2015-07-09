@@ -1,0 +1,109 @@
+<dom-module id="sign-in-dialog">
+
+  <link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+  <link rel="import" href="../bower_components/paper-dialog-behavior/paper-dialog-behavior.html">
+  <link rel="import" href="../bower_components/paper-button/paper-button.html">
+  <link rel="import" href="../bower_components/iron-form/iron-form.html">
+  <link rel="import" href="../bower_components/paper-input/paper-input.html">
+
+  <style>
+  paper-dialog h2 {
+    margin: 0;
+    padding-top: 5%;
+    display: block;
+    font-family: 'Roboto Slab';
+  }
+
+  paper-dialog {
+    min-height: 48%;
+    width: 20%;
+    border-radius: 8px;
+    padding: 1%;
+    opacity: .95;
+  }
+
+  paper-input {
+    width: 100%;
+    font-family: 'Roboto Slab';
+  }
+
+  label.paper-input {
+    font-family: 'Roboto Slab';
+  }
+
+  paper-button {
+    font-family: 'Roboto Slab';
+    margin: 0;
+    width: 100%;
+    background-color: #2196F3;
+    color: #FFFFFF;
+  }
+
+  form {
+    margin: 0;
+  }
+
+  #inputs {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom:10%;
+  }
+
+  .left {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+    width: 100%;
+  }
+
+  </style>
+
+  <template>
+    <paper-dialog id="sign-in-dialog" with-backdrop>
+
+      <h2>Sign in</h2>
+      <form method="post" action="/form/handler">
+        <div id="inputs">
+          <div class="left">
+            <paper-input name="email" label="Email Address"></paper-input>
+            <paper-input name="password" type="password" label="Password"></paper-input>
+          </div>
+
+        </div>
+        <paper-button raised onclick="submitForm()">Sign In</paper-button>
+      </form>
+
+    </paper-dialog>
+  </template>
+
+</dom-module>
+
+<script>
+Polymer({
+  is: 'sign-in-dialog'
+});
+
+</script>
+
